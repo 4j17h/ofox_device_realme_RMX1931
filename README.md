@@ -1,7 +1,5 @@
-# android_device_realme_RMX1931
-For building TWRP for Realme X2 Pro
-
-TWRP device tree for Realme X2 Pro
+# ofox_device_realme_RMX1931
+realme x2 Pro OrangeFox device tree.
 
 ## Features
 
@@ -13,45 +11,42 @@ Works:
 - Correct screenshot color
 - MTP
 - Flashing (opengapps, roms, images and so on)
-- Backup/Restore (Needs more testing)
+- Backup/Restore
+- Vibration support
 - USB OTG
 
 TO-DO:
 
-- Vibration support
+- You tell me
 
 ## Compile
 
-First checkout minimal twrp with omnirom tree:
+First initialize OrangeFox Recovery repos:
 
 ```
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-repo sync
+repo init -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+repo sync -j$(nproc --all)
 ```
 
-Then add these projects to .repo/manifest.xml:
-
-```xml
-<project path="device/realme/RMX1931" name="mauronofrio/android_device_realme_RMX1931" remote="github" revision="android-9.0" />
-```
-
-Finally execute these:
+Then clone device tree:
 
 ```
-. build/envsetup.sh
-lunch omni_RMX1931-eng
-mka recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
+git clone https://github.com/Jerry1908/ofox_device_realme_RMX1931 -b fox_9.0 device/realme/RMX1931
 ```
 
-To test it:
+Finally execute these to build OrangeFox Recovery:
+
+``` 
+. build/envsetup.sh && export ALLOW_MISSING_DEPENDENCIES=true
+lunch omni_RMX1931-eng && mka recoveryimage
 
 ```
-fastboot boot out/target/product/RMX1931/recovery.img
-```
+
+Now flash image via fastboot or zip package via custom recovery.
 
 ## Other Sources
 
-Using precompiled stock kernel
+Using precompiled stock kernel.
 
 ## Thanks
 
