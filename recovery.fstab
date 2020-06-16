@@ -13,7 +13,7 @@
 /system_image  emmc   /dev/block/bootdevice/by-name/system
 /vendor_image  emmc   /dev/block/bootdevice/by-name/vendor
 
-/metadata      ext4   /dev/block/bootdevice/by-name/metadata 					
+/metadata      ext4   /dev/block/bootdevice/by-name/metadata
 /data          ext4   /dev/block/bootdevice/by-name/userdata                     flags=fileencryption=ice:aes-256-cts;wrappedkey;keydirectory=/metadata/vold/metadata_encryption
 /firmware      vfat   /dev/block/bootdevice/by-name/modem                        flags=display="Firmware";mounttodecrypt
 /misc          emmc   /dev/block/bootdevice/by-name/misc
@@ -25,7 +25,7 @@
 /efsc          emmc   /dev/block/bootdevice/by-name/fsc                          flags=backup=1;subpartitionof=/efs1
 /efsg          emmc   /dev/block/bootdevice/by-name/fsg                          flags=backup=1;subpartitionof=/efs1
 /persist       ext4   /dev/block/bootdevice/by-name/persist                      flags=display="Persist"
-/persist_image     emmc    /dev/block/bootdevice/by-name/persist                 flags=display="Persist";flashimg=1
+/persist_image     emmc    /dev/block/bootdevice/by-name/persist                 flags=display="Persist";flashimg=1;backup=1
 /vbmeta        emmc   /dev/block/bootdevice/by-name/vbmeta                      flags=display="Vbmeta";flashimg=1;backup=1
 
 # Removable storage
