@@ -61,7 +61,7 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_CLANG_VERSION := r353983c
   TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
   TARGET_KERNEL_SOURCE := kernel/realme/sm8150
-  TARGET_KERNEL_CONFIG := vendor/sm8150-perf_defconfig
+  TARGET_KERNEL_CONFIG := RMX1931_defconfig
 endif
 
 
